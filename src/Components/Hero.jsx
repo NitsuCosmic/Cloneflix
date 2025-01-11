@@ -31,7 +31,7 @@ function Hero() {
 
 	return (
 		<header className="max-h-svh max-w-[1920px] mx-auto relative">
-			<nav className="flex justify-between items-center p-4 backdrop-blur-sm fixed w-full bg-black/50 font-medium z-50 lg:px-16">
+			<nav className="flex justify-between items-center p-4 backdrop-blur-sm fixed w-full max-w-[1920px] bg-black/50 font-medium z-50 lg:px-16">
 				<h3>
 					<a href="#">Home</a>
 				</h3>

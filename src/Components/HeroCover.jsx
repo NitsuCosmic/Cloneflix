@@ -1,4 +1,4 @@
-import { BASE_IMG_URL } from "../api";
+import { BASE_IMG_URL, IMG_SIZES } from "../api";
 
 function HeroCover({ data }) {
 	console.log(data);
@@ -8,12 +8,12 @@ function HeroCover({ data }) {
 			<picture className="brightness-90">
 				<source
 					media="(min-width:1024px)"
-					srcSet={BASE_IMG_URL + "/original" + data.backdrop_path}
+					srcSet={`${BASE_IMG_URL}/${IMG_SIZES.backdrop_sizes.original}${data.backdrop_path}`}
 					className="w-full md:h-svh object-cover object-center"
 					draggable="false"
 				/>
 				<img
-					src={BASE_IMG_URL + "/original" + data.poster_path}
+					src={`${BASE_IMG_URL}/${IMG_SIZES.poster_sizes.original}${data.poster_path}`}
 					alt=""
 					draggable="false"
 					className="w-full md:h-svh object-cover object-center"
@@ -28,7 +28,7 @@ function HeroCover({ data }) {
 						{data.overview}
 					</p>
 					<div className="flex justify-center gap-2 lg:justify-start font-semibold">
-						<button className="px-4 py-1 lg:px-5 lg:py-2 text-black text-lg lg:text-xl bg-white rounded hover:bg-white/80 transition-colors">
+						<button className="px-4 py-1 lg:px-5 lg:py-2 text-black text-lg lg:text-xl bg-white rounded hover:bg-neutral-200 transition-colors">
 							Play Trailer
 						</button>
 						<button className="px-4 py-1 lg:px-5 lg:py-2 text-white text-lg lg:text-xl bg-neutral-500/60 rounded hover:bg-neutral-500/40 transition-colors">
@@ -37,7 +37,7 @@ function HeroCover({ data }) {
 					</div>
 				</div>
 			</div>
-			<div className="hidden lg:block absolute left-0 bottom-0 w-full h-[15rem] shadow-[inset_0px_-160px_60px_-100px_rgba(20,20,20,1);]"></div>
+			<div className="hidden lg:block absolute left-0 bottom-0 w-full h-[12rem] shadow-[inset_0px_-280px_80px_-180px_rgba(20,20,20,1);]"></div>
 		</div>
 	);
 }
